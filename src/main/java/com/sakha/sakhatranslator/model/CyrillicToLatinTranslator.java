@@ -38,33 +38,35 @@ public class CyrillicToLatinTranslator {
         return ret.toString();
     }
 
-    private char getChar(char charInCyrillic) {
+    private String getChar(char charInCyrillic) {
         return switch (charInCyrillic) {
-            case 'а' -> 'a';
-            case 'б' -> 'b';
-            case 'г' -> 'g';
-            case 'ҕ' -> 'ʃ';
-            case 'д' -> 'd';
-            case 'и' -> 'i';
-            case 'й' -> 'j';
-            case 'к' -> 'k';
-            case 'л' -> 'l';
-            case 'м' -> 'm';
-            case 'н' -> 'n';
-            case 'ҥ' -> 'ŋ';
-            case 'о' -> 'ɔ';
-            case 'п' -> 'p';
-            case 'р' -> 'r';
-            case 'c' -> 's';
-            case 'һ' -> 'h';
-            case 'т' -> 't';
-            case 'у' -> 'u';
-            case 'ү' -> 'y';
-            case 'х' -> 'q';
-            case 'ч' -> 'c';
-            case 'ы' -> 'ɯ';
-            case 'э' -> 'e';
-            default -> charInCyrillic;
+            case 'а' -> "a";
+            case 'б' -> "b";
+            case 'г' -> "g";
+            case 'ҕ' -> "ʃ";
+            case 'д' -> "d";
+            case 'и' -> "i";
+            case 'й' -> "j";
+            case 'к' -> "k";
+            case 'л' -> "l";
+            case 'м' -> "m";
+            case 'н' -> "n";
+            case 'ҥ' -> "ŋ";
+            case 'о' -> "ɔ";
+            case 'п' -> "p";
+            case 'р' -> "r";
+            case 'с' -> "s";
+            case 'һ' -> "h";
+            case 'т' -> "t";
+            case 'у' -> "u";
+            case 'ү' -> "y";
+            case 'х' -> "q";
+            case 'ч' -> "c";
+            case 'ы' -> "ɯ";
+            case 'э' -> "e";
+            case 'я' -> "ja";
+            case 'ө' -> "œ";
+            default -> String.valueOf(charInCyrillic);
         };
     }
 
@@ -88,7 +90,7 @@ public class CyrillicToLatinTranslator {
     }
 
     private String getLongSound(char ch) {
-        return ch + ":";
+        return getChar(ch) + ":";
     }
 
     private boolean isBytejDorhoon(char ch) {
